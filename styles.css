@@ -1,0 +1,195 @@
+:root {
+  --bg: #0b1220;
+  --panel: #111b2f;
+  --border: #2b3959;
+  --text: #e6edf7;
+  --muted: #a6b4cf;
+  --accent: #49c3f2;
+  --major-node: #8ad2ff;
+  --career-node: #95f2be;
+  --edge: #42608c;
+  --active: #ffd166;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, sans-serif;
+  background: radial-gradient(circle at top, #101a31, var(--bg) 45%);
+  color: var(--text);
+}
+
+.app-header,
+.app-footer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.app-header h1 {
+  margin-bottom: 0.3rem;
+}
+
+.layout {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: 280px 1fr 340px;
+  gap: 1rem;
+}
+
+.panel {
+  background: rgba(17, 27, 47, 0.88);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0.9rem;
+  min-height: 120px;
+}
+
+h2 {
+  margin-top: 0.1rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.05rem;
+}
+
+.major-filters {
+  display: grid;
+  gap: 0.5rem;
+  max-height: 560px;
+  overflow-y: auto;
+  margin-bottom: 0.8rem;
+}
+
+.major-filters label {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.network {
+  min-height: 760px;
+}
+
+#networkSvg {
+  width: 100%;
+  height: 760px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #0d1629, #0a1020);
+  border: 1px solid #1b2842;
+}
+
+.edge {
+  stroke: var(--edge);
+  stroke-opacity: 0.55;
+  stroke-width: 1.4;
+}
+
+.edge.dimmed {
+  stroke-opacity: 0.12;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  stroke: #041024;
+  stroke-width: 2;
+}
+
+.node.major circle {
+  fill: var(--major-node);
+}
+
+.node.career circle {
+  fill: var(--career-node);
+}
+
+.node.dimmed {
+  opacity: 0.16;
+}
+
+.node.active circle {
+  stroke: var(--active);
+  stroke-width: 3;
+}
+
+.node text {
+  fill: #dce7ff;
+  font-size: 12px;
+  paint-order: stroke;
+  stroke: #09152a;
+  stroke-width: 3px;
+}
+
+.details .placeholder {
+  color: var(--muted);
+}
+
+.details h3 {
+  margin: 0 0 0.2rem;
+}
+
+.metrics {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.8rem 0;
+}
+
+.metric {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem;
+  background: rgba(7, 13, 24, 0.6);
+}
+
+.metric .label {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.metric .value {
+  font-weight: 600;
+}
+
+ul {
+  margin-top: 0.2rem;
+}
+
+.source-links {
+  font-size: 0.88rem;
+}
+
+.source-links a {
+  color: var(--accent);
+}
+
+@media (max-width: 1200px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .network {
+    order: 1;
+  }
+}
