@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engineering Career Neural Map</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Engineering Career Neural Map</h1>
+      <p>
+        Explore interdisciplinary career pathways across 11 engineering-focused
+        majors. Select one or more majors to see connected professions.
+      </p>
+    </header>
+
+    <main class="layout">
+      <section class="controls panel">
+        <h2>Majors</h2>
+        <p>Filter the network by academic discipline and interests.</p>
+        <div id="majorFilters" class="major-filters"></div>
+        <button id="resetFilters" class="btn-secondary">Reset Filters</button>
+      </section>
+
+      <section class="network panel">
+        <h2>Career Network</h2>
+        <svg id="networkSvg" viewBox="0 0 1200 760" role="img" aria-label="Career network map"></svg>
+      </section>
+
+      <aside class="details panel">
+        <h2>Career Details</h2>
+        <div id="detailsContent" class="placeholder">
+          <p>Select a career node to view role details from O*NET and BLS.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="app-footer">
+      <p>
+        Data references are linked per node. BLS values are intentionally stored
+        as a local snapshot and should be refreshed each academic year.
+      </p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
